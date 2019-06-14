@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    
+</head>
+
+<body>
+
+    <!--CONTENEDOR DEL CIFRADO-->
+    <section id="content-cipher" class="content">
+        <header class="content-header">
+            <h1>Neighborcode</h1>
+            <p><i>Vecindario seguro</i></p>
+        </header>
+
+
+
+
+        
+      
+
+        <!--CODIFICADO-->
+
+        <div id="content-msg-encode" class="msg-style display_block">
+            <p>Ingrese Su Nombre para codificar</p>
+            <textarea id="box-msg-encode" class="box-msg-style" placeholder="Ingrese su mensaje..."></textarea>
+            <div class="content-offset">
+                <label class="label">Ingrese N° de desplazamiento</label>
+                <input type="number" id="n_offset_e" class="n_offset_style">
+            </div>
+            <input type="button" value="Encriptar" onclick = "encode()">
+            <div id="msg-encode" class="msg-ckeck">
+                <p id="msg-encode-check"></p>
+            </div>
+            <button onclick="location.reload();" class="btn_reload">Limpiar</button>
+        </div>
+
+        <!--DECODIFICADO-->
+
+        <div id="content-msg-decode" class="msg-style display_none">
+            <p>Ingrese su clave para decodificar</p>
+            <textarea id="box-msg-decode" class="box-msg-style" placeholder="Ingrese su mensaje..."></textarea>
+            <div class="content-offset">
+                <label class="label">Ingrese N° de desplazamiento</label>
+                <input type="number" id="n_offset_d" class="n_offset_style">
+            </div>
+            <input type="button" value="Desencriptar" onclick = "decode()">
+            <div id="msg-decode" class="msg-ckeck">
+                <p id="msg-decode-check"></p>
+            </div>
+            <button onclick="location.reload();" class="btn_reload">Limpiar</button>
+        </div>
+    </section>
+
+    
+    <div id="root"></div>
+    <script src="cipher.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
