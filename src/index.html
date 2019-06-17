@@ -4,60 +4,85 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
+    <link rel="shortcut icon" href="icon.ico">
+    <title>Neighborcode</title> 
+    <link rel=”stylesheet” type=”text/css” href=”style.css”>
+    
     
 </head>
 
 <body>
-
+    <style type="text/css">
+            html { 
+                background: url("locklock.jpg") no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+             </style>
+                <img src="icon.ico">
+    
     <!--CONTENEDOR DEL CIFRADO-->
     <section id="content-cipher" class="content">
         <header class="content-header">
+            
+            
             <h1>Neighborcode</h1>
             <p><i>Vecindario seguro</i></p>
         </header>
-
-
-
-
+        <div class="titulo_boton">
+            Esta aplicación tiene como finalidad llevar un control de entrada y salida para los residentes de cada unidad.
+            Introduzca su nombre, el número de su departamento y una palabra secreta para obtener un código, el cual deberá
+            presentar en la entrada de la unidad. De igual manera, si espera a alguna persona, deberá generar un código para 
+            que pueda acceder. Así, quedarán registrados los accesos y podrán ser consultados en cualquier momento. 
+            <br><br>
+            <a style='cursor: pointer;' onClick="mostrar('contenido')" title="" class="boton_mostrar">Empezar</a>
+        </div>
+        <br>
         
-      
-
-        <!--CODIFICADO-->
-
-        <div id="content-msg-encode" class="msg-style display_block">
-            <p>Ingrese Su Nombre para codificar</p>
-            <textarea id="box-msg-encode" class="box-msg-style" placeholder="Ingrese su mensaje..."></textarea>
-            <div class="content-offset">
-                <label class="label">Ingrese N° de desplazamiento</label>
-                <input type="number" id="n_offset_e" class="n_offset_style">
+        <div id="contenido">
+            
+            <p>Introduce tu nombre / Nombre de tu invitado(a)</p>
+            <input type="text" id="usuario"/>
+            <br>
+            <p>Número de departamento</p>
+            <input type="text" id="departamento"/><br><br>
+            
+            <input type="text" id="resultado" readonly="readonly">
+            
+            <input type="button" name="enviar" id="datos" value="Enviar" onclick="enviarTexto()"/><br>
+            
+            
+            
+            
+        
+        <form action="caesar">
+                    
+                    <p>Introduce tu mensaje </p>
+                    <p> 
+                        <textarea rows="10" 
+                        cols="40" 
+                        id="texto" ></textarea>
+                    </p>
+                    <p> Key &nbsp; 
+                        <input type="number"  
+                        max=25 min=1   id= "shift">
+                    </p>
+                    <p><input type="button" 
+                        value="Cifrar!"
+                        id="cifrado" >
+                        &nbsp;&nbsp; 
+                        <input type="button" 
+                        value="Descifrar" id="descifrado"></p>
+                    </form>
+                    
+            
+            <br>
+            <p>Resultados:</p>
+            <input type="text" id="mostrarResultado" readonly="readonly">
             </div>
-            <input type="button" value="Encriptar" onclick = "encode()">
-            <div id="msg-encode" class="msg-ckeck">
-                <p id="msg-encode-check"></p>
-            </div>
-            <button onclick="location.reload();" class="btn_reload">Limpiar</button>
-        </div>
 
-        <!--DECODIFICADO-->
-
-        <div id="content-msg-decode" class="msg-style display_none">
-            <p>Ingrese su clave para decodificar</p>
-            <textarea id="box-msg-decode" class="box-msg-style" placeholder="Ingrese su mensaje..."></textarea>
-            <div class="content-offset">
-                <label class="label">Ingrese N° de desplazamiento</label>
-                <input type="number" id="n_offset_d" class="n_offset_style">
-            </div>
-            <input type="button" value="Desencriptar" onclick = "decode()">
-            <div id="msg-decode" class="msg-ckeck">
-                <p id="msg-decode-check"></p>
-            </div>
-            <button onclick="location.reload();" class="btn_reload">Limpiar</button>
-        </div>
-    </section>
-
-    
-    <div id="root"></div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
 </body>

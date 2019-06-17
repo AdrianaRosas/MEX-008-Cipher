@@ -1,27 +1,33 @@
-window.cipher = {
-	encode: (string,offset) => {
-		let msgCipher = ""//mensaje recibido
-		for(let i = 0; i < string.length; i++){ //Para los valores insertados
-			if(string.charCodeAt(i) === 32){ //identificacion de espacios vacios
-				msgCipher += " ";
-			}else{
-				let textChar = (string.charCodeAt(i) - 65 + parseInt(offset)) % 26 + 65; //aplicando formula de cifrado
-				msgCipher+=String.fromCharCode(textChar); //para convertir el texto en minusculas
-			}
-		}
-		console.log(textChar)
-		return msgCipher; //retornar respuesta
-	},
-	decode: (string,offset) => { 
-		let msgDecipher = ""; //mensaje recibido
-		for(let i = 0; i < string.length; i++){ //inicio recorrido de caracteres
-			if(string.charCodeAt(i) === 32){ //identificacion de espacios vacios
-				msgDecipher += " ";
-			}else{
-				let textChar = (string.charCodeAt(i) + 65 - parseInt(offset)) % 26 + 65; //aplicando formula de decifrado
-				msgDecipher += String.fromCharCode(textChar); //conviertiendo el texto decifrado en minusculas
-			}
-		}
-		return msgDecipher; //retornar respuesta
+window.cipher 
+//Cifrado
+function encode () {
+	const m = document.getElementById("texto").value; //Se le da valor al texto introducido
+	let desplazar = document.getElementById("shift").value; //Lugares a desplazar
+	let s = parseInt(desplazar);
+	let result = " "; //variable para la fórmula
+	for (let i = 0; i < m.length; i++){ 
+		let letter = m.charCodeAt(i); //devolviendo el caracter y convirtiendo el texto a codigo ASCII
+	  if (65 <= letter && letter <= 90) result += String.fromCharCode((letter - 65 + s) % 26 + 65);// Aplicando formula de conversion mayúsculas por su posición en el código ASCII
+	  else if (97 <= letter && letter <= 122) result += String.fromCharCode((letter - 97 + s) % 26 + 97); // Aplicando forumula de conversion minúsculas por su posición en el cógigo ASCII
+	  else                          result += m.charAt(i) // Devuelve el primer caracter de la nueva cadena
+	
+	  document.getElementById("mostrarResultado").value = result; // Resultado en HTML
 	}
-}
+  }
+  
+  // Descifrado//
+  function decode () { 
+	const m = document.getElementById("texto").value;//Se le da valor al texto introducido
+	let desplazar = document.getElementById("shift").value; //Lugares a desplazar
+	  let s = parseInt(desplazar);
+	  let result = " "; //variable para la fórmula
+	for (let i = 0; i < m.length; i++){
+		let letter = m.charCodeAt(i);//convirtiendo el texto a codigo ASCII
+		if (65 <= letter && letter <=(90-s) ) result += String.fromCharCode((letter - 65 - s) % 26 + 65);// Aplicando la fórmula para letras mayúsculas
+		else if (((90-s)+1) <= letter && letter <= (90-s)) result += String.fromCharCode((letter - 97 - s) % 26 + 97);// Aplicando la fórmula para letras minúsculas
+	  else                          result += m.charAt(i) // Devuelve el primer caracter de la nueva cadena
+	  document.getElementById("mostrarResultado").value = result;// Resultado en HTML
+	
+	}
+  
+  }
