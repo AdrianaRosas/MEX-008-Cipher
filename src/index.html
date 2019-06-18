@@ -5,53 +5,50 @@
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="icon.ico">
-    <title>Neighborcode</title> 
-    <link rel=”stylesheet” type=”text/css” href=”style.css”>
-    
+    <title>NeighborCode</title> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
     
 </head>
 
-<body>
-    <style type="text/css">
-            html { 
-                background: url("locklock.jpg") no-repeat center center fixed; 
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-             </style>
-                <img src="icon.ico">
+<body>    
+    <div id="root">   
     
     <!--CONTENEDOR DEL CIFRADO-->
-    <section id="content-cipher" class="content">
-        <header class="content-header">
-            
-            
-            <h1>Neighborcode</h1>
-            <p><i>Vecindario seguro</i></p>
-        </header>
-        <div class="titulo_boton">
-            Esta aplicación tiene como finalidad llevar un control de entrada y salida para los residentes de cada unidad.
+    
+             <h1> <img id="lupa" src="icono.png" width="5%" alt=> NeighborCode<p>Vecindario seguro</p></h1>
+            <h2>Esta aplicación tiene como finalidad llevar un control de entrada y salida para los residentes de cada unidad.
             Introduzca su nombre, el número de su departamento y una palabra secreta para obtener un código, el cual deberá
             presentar en la entrada de la unidad. De igual manera, si espera a alguna persona, deberá generar un código para 
-            que pueda acceder. Así, quedarán registrados los accesos y podrán ser consultados en cualquier momento. 
-            <br><br>
-            <a style='cursor: pointer;' onClick="mostrar('contenido')" title="" class="boton_mostrar">Empezar</a>
-        </div>
-        <br>
+            que pueda acceder. Así, quedarán registrados los accesos y podrán ser consultados en cualquier momento.</h2>
+            <br>
+            <a style='cursor: pointer;' onClick="mostrar('contenido')" title="" class="botonUno">Empezar</a>
+        <br><br><br>
         
         <div id="contenido">
+
+                <div class="form-container">
+                        <form action="">
+                          <input type="text" class="classinput" id="usuario" placeholder="Nombre" style="text-align: center" />
+                          <label for="input" class="label"> 
+                          </label>
+                          <br><br>
+                          <input type="text" class="classinput" id="departamento" placeholder="Departamento" style="text-align: center" />
+                          <label for="input" class="label">
+                            
+                          </label>
+                          
+                          <br><br>
+                          <a style='cursor: pointer;' class="botonEmpezar" id="datos" value="Enviar" onclick="enviarTexto()">Enviar datos</a>
+                          <br>
+                          
+                        </div>
+                        </form>
+                        <br>
+                          
             
-            <p>Introduce tu nombre / Nombre de tu invitado(a)</p>
-            <input type="text" id="usuario"/>
-            <br>
-            <p>Número de departamento</p>
-            <input type="text" id="departamento"/><br><br>
-            
-            <input type="text" id="resultado" readonly="readonly">
-            
-            <input type="button" name="enviar" id="datos" value="Enviar" onclick="enviarTexto()"/><br>
             
             
             
@@ -59,29 +56,34 @@
         
         <form action="caesar">
                     
-                    <p>Introduce tu mensaje </p>
                     <p> 
-                        <textarea rows="10" 
-                        cols="40" 
-                        id="texto" ></textarea>
+                        <input type="text" 
+                        id="texto"  class="classinput" placeholder="Introduce tu mensaje" style="text-align: center"></textarea>
                     </p>
-                    <p> Key &nbsp; 
+                    <h3>Key:</h3> &nbsp; 
                         <input type="number"  
-                        max=25 min=1   id= "shift">
+                        max=25 min=1 class="offset" id= "shift" placeholder="Offset" style="text-align: center">
                     </p>
-                    <p><input type="button" 
-                        value="Cifrar!"
-                        id="cifrado" >
-                        &nbsp;&nbsp; 
-                        <input type="button" 
-                        value="Descifrar" id="descifrado"></p>
+                    <p><a style='cursor: pointer;' class="botonEmpezar"
+                        id="cifrado">Cifrar</a>
+                        &nbsp; 
+                        <a style='cursor: pointer;' class="botonEmpezar"
+                        value="Descifrar" id="descifrado">Descifrar</a></p>
+
+                        <input type="Reset"; class="botonEmpezar"
+                        value="Limpiar" id="borrar"></a></p>
                     </form>
                     
             
             <br>
-            <p>Resultados:</p>
-            <input type="text" id="mostrarResultado" readonly="readonly">
+            <input type="text" class="result" id="resultado" readonly="readonly" style="text-align: center"></textarea>
+                          <label for="input" class="label"></label></form>
+                        </form>
+            </p><input type="text" class="result" id="mostrarResultado" readonly="readonly" placeholder="Código" style="text-align: center"></textarea>
             </div>
+        </div>     
+     
+            guardados</a></p> 
 
     <script src="cipher.js"></script>
     <script src="index.js"></script>

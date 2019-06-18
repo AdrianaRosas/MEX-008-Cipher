@@ -11,7 +11,7 @@ function encode () {
 	  else if (97 <= letter && letter <= 122) result += String.fromCharCode((letter - 97 + s) % 26 + 97); // Aplicando forumula de conversion minúsculas por su posición en el cógigo ASCII
 	  else                          result += m.charAt(i) // Devuelve el primer caracter de la nueva cadena
 	
-	  document.getElementById("mostrarResultado").value = result; // Resultado en HTML
+	  document.getElementById("mostrarResultado").value = 'Tu nuevo código es:' + result; // Resultado en HTML
 	}
   }
   

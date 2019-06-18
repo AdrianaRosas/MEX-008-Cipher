@@ -13,7 +13,7 @@ function mostrar(id){
     {
         let persona=document.getElementById("usuario").value;
         let lugar=document.getElementById("departamento").value;
-        document.getElementById("resultado").value='Hola'+persona+lugar;
+        document.getElementById("resultado").value='¡Hola'+ " " + persona + " " + "del" + " " + lugar +"!";
     };  
 
 //variables de los botones
@@ -25,4 +25,3 @@ let descifrar = document.getElementById("descifrado");
 cifrar.addEventListener("click", encode);
 descifrar.addEventListener("click", decode);
 
-    
