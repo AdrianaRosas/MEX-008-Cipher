@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" href="icon.ico">
-  <title>NeighborCode</title>
+  <link rel="shortcut icon" href="icon.ico"> <!--ICONO PARA EL NOMBRE DE LA PÁGINA-->
+  <title>NeighborCode</title> 
+
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
@@ -17,34 +18,29 @@
 
     <!--CONTENEDOR DEL CIFRADO-->
 
-    <h1> <img id="lupa" src="icono.png" width="5%" alt=> NeighborCode<p>Vecindario seguro</p>
+    <h1> <img id="lupa" src="icono.png" width="8%" alt=> NeighborCode<p>Vecindario seguro</p>
     </h1>
     <h2>Esta aplicación tiene como finalidad llevar un control de entrada y salida para los residentes de cada unidad.
       Introduzca su nombre, el número de su departamento y una palabra secreta para obtener un código, el cual deberá
       presentar en la entrada de la unidad. De igual manera, si espera a alguna persona, deberá generar un código para
       que pueda acceder. Así, quedarán registrados los accesos y podrán ser consultados en cualquier momento.</h2>
     <br>
-    <a style="cursor: pointer;" title="" id="empezar" class="botonUno">EMPEZAR</a>
+    <a style="cursor: pointer;" title="" id="empezar" class="botonUno">EMPEZAR</a> <!--BOTÓN CON EL ESTILO DE CAMBIO A MANITA CUANDO SE PASA POR ENCIMA DE ÉL-->
     <br><br><br>
 
     <div id="contenido">
 
-      <div class="form-container">
-        <form action="">
+      <div class="form-container"> <!--OTRA CLASE--> 
           <input type="text" class="classinput" id="usuario" placeholder="Nombre" style="text-align: center" />
-          <label for="input" class="label">
-          </label>
           <br><br>
           <input type="text" class="classinput" id="departamento" placeholder="Departamento"
             style="text-align: center" />
-          <label for="input" class="label">
-
-          </label>
+        
 
           <br><br>
           <a style="cursor: pointer;" class="botonEmpezar" id="datos" value="Enviar">Enviar datos</a>
           <br>
-        </form>
+        
       </div>
       <br>
 
@@ -60,18 +56,17 @@
           <input type="text" id="texto" class="classinput" placeholder="Introduce tu mensaje"
             style="text-align: center">
         </p>
-        <h3>Key:</h3> &nbsp;
+        <h3>Key:</h3> 
         <input type="number" max="25" min="1" class="offset" id="shift" placeholder="Offset" style="text-align: center">
         <a style="cursor: pointer;" class="botonEmpezar" id="cifrado">Cifrar</a>
-        &nbsp;
+        
         <a style="cursor: pointer;" class="botonEmpezar" value="Descifrar" id="descifrado">Descifrar</a>
 
-        <input type="Reset" ; class="botonEmpezar" value="Limpiar" id="borrar">
+        <input type="Reset"  class="botonEmpezar" value="Limpiar" id="borrar"> <!--BOTÓN DE LIMPIAR-->
       </form>
       <br>
       <input type="text" class="result" id="resultado" readonly="readonly" style="text-align: center">
-      <label for="input" class="label"></label>
-
+      
       <input type="text" class="result" id="mostrarResultado" readonly="readonly" placeholder="Código"
         style="text-align: center">
     </div>

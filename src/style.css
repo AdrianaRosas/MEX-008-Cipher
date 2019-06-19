@@ -1,5 +1,5 @@
 body { 
-  background-image: url('./casas2.jpg'); 
+  background-image: url('./casas2.jpg');  /*imagen de fondo*/
   background-size: 100%;
   display: block;
   opacity: initial;
